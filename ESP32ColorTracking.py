@@ -1,6 +1,12 @@
 import cv2 as cv 
 import numpy as np 
 
+def Resize(frame,percent=75):
+    width = int(frame.shape[1] *percent /100)
+    height=int(frame.shape[0] *percent /100)
+    dim = (width,height)
+    res =cv.resize(frame,dim,interpolation=cv.INTER_AREA)
+    return res
 
 def FindCenter(mask):
     contours,_ = cv.findContours(mask,cv.RETR_TREE,cv.CHAIN_APPROX_SIMPLE)
@@ -80,8 +86,8 @@ while True:
         DrawCross(cx,cy,height,width)  
     else:
         cx,cy = default_cx,default_cy  
-
-    cv.imshow("WEBCAM",frame)
+    resizeFrame = Resize(frame,150)
+    cv.imshow("WEBCAM",resizeFrame)
     if cv.waitKey(1)==27:
         break
 cv.destroyAllWindows()
