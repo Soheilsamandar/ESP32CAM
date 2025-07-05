@@ -2,7 +2,6 @@
 in the https://github.com/Soheilsamandar/ESP32CAM/blob/main/CameraWebServer_Access_Point/CameraWebServer_Access_Point.ino this file you can change this parameters for your own WIFI AP(Access Point)
 
 #const char* ssid = "ESP32-CAM"; 
-
 #const char* password = "123456789"; 
 
 
