@@ -1,9 +1,9 @@
 ### AP mode for ESP32-CAM:
 in the https://github.com/Soheilsamandar/ESP32CAM/blob/main/CameraWebServer_Access_Point/CameraWebServer_Access_Point.ino this file you can change this parameters for your own WIFI AP(Access Point)
 
-const char* ssid = "ESP32-CAM"; 
+#const char* ssid = "ESP32-CAM"; 
 
-const char* password = "123456789"; 
+#const char* password = "123456789"; 
 
 
 ### Hand detector by ESP32-CAM in AP mode
