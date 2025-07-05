@@ -4,8 +4,7 @@ in the https://github.com/Soheilsamandar/ESP32CAM/blob/main/CameraWebServer_Acce
 #const char* ssid = "ESP32-CAM";
 
 #const char* password = "123456789"; 
-
-
+##
 ### Hand detector by ESP32-CAM in AP mode
 https://github.com/Soheilsamandar/ESP32CAM/blob/main/ESP32ColorTracking.py
 ##
