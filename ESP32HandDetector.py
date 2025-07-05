@@ -1,6 +1,15 @@
 import cv2 as cv 
 from cvzone.HandTrackingModule import HandDetector
 
+def Resize(frame,percent=75):
+    width = int(frame.shape[1] *percent /100)
+    height=int(frame.shape[0] *percent /100)
+    dim = (width,height)
+    res =cv.resize(frame,dim,interpolation=cv.INTER_AREA)
+    return res
+
+
+
 URL ="http://192.168.4.1:81/stream"
 cap = cv.VideoCapture(URL)
 detector = HandDetector(detectionCon=0.2 , maxHands= 2)
@@ -18,7 +27,7 @@ while True:
         cv.putText(frame,"No Hand",xy,cv.FONT_HERSHEY_COMPLEX,0.5,(255,0,0),2)
 
 
-    
+    resFrame=Resize(frame,100)
     cv.imshow('webcam', webcam)
     keyexit = cv.waitKey(5) & 0xFF
     if keyexit == 27:
