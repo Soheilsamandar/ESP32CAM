@@ -1,6 +1,15 @@
 import cv2 as cv 
 import numpy as np
 
+def Resize(frame,percent=75):
+    width = int(frame.shape[1] *percent /100)
+    height=int(frame.shape[0] *percent /100)
+    dim = (width,height)
+    res =cv.resize(frame,dim,interpolation=cv.INTER_AREA)
+    return res
+
+
+
 def DetectColor(frame,Lower,Upper,COLORNAME=''):
     ColorCounter=0
     FrameHSV = cv.cvtColor(frame,cv.COLOR_BGR2HSV)
@@ -35,7 +44,8 @@ while(True):
     GREEN = DetectColor(cam,np.array([40,50,50]),Upper=np.array([90,255,255]),COLORNAME="GREEN")
     if BLUE or GREEN:
         print(f"BLUE : {BLUE} ,GREEN : {GREEN}")
-    cv.imshow('WEBCAM',cam)
+    resFrame=Resize(cam,100)
+    cv.imshow('WEBCAM',resFrame)
     if cv.waitKey(1)== 27 :
         break
 cv.destroyAllWindows()
