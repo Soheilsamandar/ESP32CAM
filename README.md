@@ -1,4 +1,4 @@
-### Hand detector
+### Hand detector by ESP32-CAM in AP mode
 https://github.com/Soheilsamandar/ESP32CAM/blob/main/ESP32ColorTracking.py
 
 
